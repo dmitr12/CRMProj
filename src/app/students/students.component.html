@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div id="btn-panel" [hidden]="isHideBtnPanel" class="row btn-panel justify-content-start">
+        <span class="material-icons btn-panel-item" (click)="btnPanelAdd()">add_circle_outline</span>
+        <span class="material-icons btn-panel-item" (click)="btnPanelPosition()">east</span>
+        <span *ngIf="selectedStudent" class="material-icons btn-panel-item" (click)="btnPanelEdit()">create</span>
+        <span *ngIf="selectedStudent" class="material-icons btn-panel-item" (click)="btnPanelDelete()">remove_circle_outline</span>
+      </div>
+      <ng-template #formComponent></ng-template>
+      <div class="list" [hidden]="isHideBtnPanel">
+        <app-studentlist (onState)="onStudentListChanged($event)"></app-studentlist>
+      </div>
+    </div>
+    <div class="col list-events">
+      <app-studentsevent [selectedStudent]="selectedStudent" [selectedStudentEvents]="selectedStudentEvents"></app-studentsevent>
+    </div>
+  </div>
+</div>
