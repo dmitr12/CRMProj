@@ -17,9 +17,8 @@
         <input *ngIf="matSelected==='text'" id="filterInputText" type="text" [(ngModel)]="inputValue" (input)="changeInputFilter($event)">
       </div>
     </div>
-    <div [hidden]="isHide" *ngIf="this.events.length" style="margin: 0px 28px 40px 20px; background-color: #980af7; height: 1px"></div>
   </div>
-  <div class="list_evnts list" [hidden]="isHide">
+  <div class="list_evnts list" style="max-height: 550px; min-height: 550px;" [hidden]="isHide">
     <ul class="list-group">
       <li *ngFor="let e of events">
         <div class="row">
